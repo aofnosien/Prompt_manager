@@ -54,12 +54,12 @@ namespace Prompt_manager
             var multiplier_str = tagData.positive.ToString();
             if (multiplier_str.Length > multiplier_str.IndexOf('.') + 3)
                 multiplier_str = multiplier_str[..(multiplier_str.IndexOf('.') + 3)];
-            item.SubItems[3].Text = multiplier_str;
+            item.SubItems[3].Text = multiplier_str == "0" ? "" : str;
 
             multiplier_str = tagData.negative.ToString();
             if (multiplier_str.Length > multiplier_str.IndexOf('.') + 3)
                 multiplier_str = multiplier_str[..(multiplier_str.IndexOf('.') + 3)];
-            item.SubItems[4].Text = multiplier_str;
+            item.SubItems[4].Text = multiplier_str == "0" ? "" : str;
 
 
             item.Tag = tagData;
