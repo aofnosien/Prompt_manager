@@ -155,11 +155,11 @@ namespace Prompt_manager
                     if (NAI_type_now == NAI_type.NAI)
                     {
                         //tagData.positive *= 1.1;
-                        tagData.positive += offset;
+                        tagData.positive = Math.Max(0.1, tagData.positive + offset);
                     }
                     else if (NAI_type_now == NAI_type.WebUI)
                     {
-                        tagData.positive += offset;
+                        tagData.positive = Math.Max(0.1, tagData.positive + offset);
                     }
                     else
                     {
@@ -184,11 +184,11 @@ namespace Prompt_manager
                     if (NAI_type_now == NAI_type.NAI)
                     {
                         //tagData.negative *= 1.1;
-                        tagData.negative += offset;
+                        tagData.negative = Math.Max(0.1, tagData.negative + offset);
                     }
                     else if (NAI_type_now == NAI_type.WebUI)
                     {
-                        tagData.negative += offset;
+                        tagData.negative = Math.Max(0.1, tagData.negative + offset);
                     }
                     else
                     {

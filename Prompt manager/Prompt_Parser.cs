@@ -60,6 +60,8 @@ namespace Prompt_manager
                 }
                 foreach (var quest in quests)
                 {
+                    if (cursor >= prompt.Length)
+                        return list;
                     if (quest.trigger(this))
                     {
                         this.cursor += quest.trigger_length;
@@ -90,6 +92,11 @@ namespace Prompt_manager
                             break;
                         }
 
+                        if (cursor >= prompt.Length || (enderMission != null && enderMission(this)))
+                        {
+                            token_start = this.cursor + 1;
+                            return list;
+                        }
 
                         continue;
                     }

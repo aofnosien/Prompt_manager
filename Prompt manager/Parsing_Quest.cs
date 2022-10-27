@@ -74,8 +74,12 @@ namespace Prompt_manager
 
                 foreach (var tag in tags)
                 {
-                    tag.positive *= 1.1;
-                    tag.negative *= 1.1;
+                    //tag.positive *= 1.1;
+                    //tag.negative *= 1.1;
+                    if (tag.positive > 0)
+                        tag.positive += 0.1;
+                    if (tag.negative > 0)
+                        tag.negative += 0.1;
                 }
             }
         };
@@ -110,6 +114,7 @@ namespace Prompt_manager
 
                 for (var i = lastTag.tagName.Length - 1; i >= 0; i--)
                 {
+                    // [whatever]
                     if (lastTag.tagName[i] == ':')
                     {
                         var multiplier_text = lastTag.tagName[(i + 1)..];
@@ -118,28 +123,30 @@ namespace Prompt_manager
                         if (Double.TryParse(multiplier_text, out multiplier) == false)
                             break;
 
-                        lastTag.tagName = lastTag.tagName[..i];
-                        multiplier_text = multiplier_text.Trim();
+                        // [whatever : number]
+                        // Separated rendering related grammar...
 
-                        foreach (var tag in tags)
-                        {
-                            tag.positive *= multiplier;
-                            tag.negative *= multiplier;
-                        }
+                        lastTag.tagName = "[" + lastTag.tagName + "]";
+
                         return;
                     }
                 }
 
                 foreach (var tag in tags)
                 {
-                    tag.positive *= 1.1;
-                    tag.negative *= 1.1;
+                    //tag.positive /= 1.1;
+                    //tag.negative /= 1.1;
+                    if (tag.positive > 0)
+                        tag.positive = Math.Max(0.1, tag.positive - 0.1);
+                    if (tag.negative > 0)
+                        tag.negative = Math.Max(0.1, tag.negative - 0.1);
                 }
             }
         };
         public static List<Parsing_Quest> WebUI_quests = new()
         {
             WebUI_weighting,
+            WebUI_squareBracket,
         };
         public static List<Parsing_Quest> NAI_quests = new()
         {

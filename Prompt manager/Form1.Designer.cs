@@ -74,6 +74,7 @@
             this.btn_SavedDown = new System.Windows.Forms.Button();
             this.btn_SavedUp = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -579,6 +580,7 @@
             // 
             // splitContainer4.Panel2
             // 
+            this.splitContainer4.Panel2.Controls.Add(this.label9);
             this.splitContainer4.Panel2.Controls.Add(this.label6);
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer1);
             this.splitContainer4.Size = new System.Drawing.Size(1000, 426);
@@ -637,6 +639,15 @@
             this.label6.Size = new System.Drawing.Size(31, 15);
             this.label6.TabIndex = 1;
             this.label6.Text = "Tags";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(162, 6);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(214, 15);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "← → : Move weight, Del : Remove tag";
             // 
             // Form1
             // 
@@ -722,5 +733,6 @@
         private Button btn_EnableTag;
         private ColumnHeader columnHeader6;
         private Button btn_FixIndex;
+        private Label label9;
     }
 }
