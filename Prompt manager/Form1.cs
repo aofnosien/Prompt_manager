@@ -49,6 +49,19 @@ namespace Prompt_manager
             item.SubItems.Add(str == "0" ? "" : str);
             str = tagData.negative.ToString();
             item.SubItems.Add(str == "0" ? "" : str);
+
+
+            var multiplier_str = tagData.positive.ToString();
+            if (multiplier_str.Length > multiplier_str.IndexOf('.') + 3)
+                multiplier_str = multiplier_str[..(multiplier_str.IndexOf('.') + 3)];
+            item.SubItems[3].Text = multiplier_str;
+
+            multiplier_str = tagData.negative.ToString();
+            if (multiplier_str.Length > multiplier_str.IndexOf('.') + 3)
+                multiplier_str = multiplier_str[..(multiplier_str.IndexOf('.') + 3)];
+            item.SubItems[4].Text = multiplier_str;
+
+
             item.Tag = tagData;
             received_tags.Add(tagData);
             list_Tag.Items.Add(item);
