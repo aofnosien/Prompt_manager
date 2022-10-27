@@ -1,0 +1,18 @@
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\bin\Release\net6.0-windows\Prompt manager.exe
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\bin\Release\net6.0-windows\Prompt manager.deps.json
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\bin\Release\net6.0-windows\Prompt manager.runtimeconfig.json
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\bin\Release\net6.0-windows\Prompt manager.dll
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\bin\Release\net6.0-windows\ref\Prompt manager.dll
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\bin\Release\net6.0-windows\Prompt manager.pdb
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt_manager.Form1.resources
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt_manager.Properties.Resources.resources
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.csproj.GenerateResource.cache
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.AssemblyInfoInputs.cache
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.AssemblyInfo.cs
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.csproj.CoreCompileInputs.cache
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.dll
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\ref\Prompt manager.dll
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.pdb
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.genruntimeconfig.cache
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.csproj.AssemblyReference.cache
