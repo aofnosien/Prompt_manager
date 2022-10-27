@@ -157,18 +157,18 @@ namespace Prompt_manager
                             var multiplier = 1.0;
                             if (multiplier < tagData.positive)
                             {
-                                while (multiplier < tagData.positive)
+                                while (multiplier + 0.001 < tagData.positive)
                                 {
-                                    multiplier *= 1.1;
+                                    multiplier += 1.1;
                                     prefix += "{";
                                     suffix += "}";
                                 }
                             }
                             else
                             {
-                                while (multiplier > tagData.positive)
+                                while (multiplier - 0.001 > tagData.positive)
                                 {
-                                    multiplier /= 1.1;
+                                    multiplier -= 1.1;
                                     prefix += "[";
                                     suffix += "]";
                                 }
@@ -199,18 +199,18 @@ namespace Prompt_manager
                             var multiplier = 1.0;
                             if (multiplier < tagData.negative)
                             {
-                                while (multiplier < tagData.negative)
+                                while (multiplier + 0.001 < tagData.negative)
                                 {
-                                    multiplier *= 1.1;
+                                    multiplier += 1.1;
                                     prefix += "{";
                                     suffix += "}";
                                 }
                             }
                             else
                             {
-                                while (multiplier > tagData.negative)
+                                while (multiplier - 0.001 > tagData.negative)
                                 {
-                                    multiplier /= 1.1;
+                                    multiplier -= 1.1;
                                     prefix += "[";
                                     suffix += "]";
                                 }

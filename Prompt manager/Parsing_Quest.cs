@@ -25,9 +25,6 @@ namespace Prompt_manager
         {
             trigger = (parser) =>
             {
-                if (parser.type != NAI_type.WebUI)
-                    return false;
-
                 if (parser.prompt[parser.cursor] == '(' &&
                     (parser.cursor > 0 && parser.prompt[parser.cursor - 1] == '\\') == false)
                 {
@@ -87,9 +84,6 @@ namespace Prompt_manager
         {
             trigger = (parser) =>
             {
-                if (parser.type != NAI_type.WebUI)
-                    return false;
-
                 if (parser.prompt[parser.cursor] == '[' &&
                     (parser.cursor > 0 && parser.prompt[parser.cursor - 1] == '\\') == false)
                 {
@@ -143,6 +137,39 @@ namespace Prompt_manager
                 }
             }
         };
+        public static Parsing_Quest NAI_weighting = new()
+        {
+            trigger = (parser) =>
+            {
+                if (parser.prompt[parser.cursor] == '{' &&
+                    (parser.cursor > 0 && parser.prompt[parser.cursor - 1] == '\\') == false)
+                {
+                    return true;
+                }
+                return false;
+            },
+            ender = (parser) =>
+            {
+                if (parser.prompt[parser.cursor] == '}' &&
+                    (parser.cursor > 0 && parser.prompt[parser.cursor - 1] == '\\') == false)
+                {
+                    return true;
+                }
+                return false;
+            },
+            afterAction = (parser, tags) =>
+            {
+                foreach (var tag in tags)
+                {
+                    //tag.positive /= 1.1;
+                    //tag.negative /= 1.1;
+                    if (tag.positive > 0)
+                        tag.positive += 0.1;
+                    if (tag.negative > 0)
+                        tag.negative += 0.1;
+                }
+            }
+        };
         public static List<Parsing_Quest> WebUI_quests = new()
         {
             WebUI_weighting,
@@ -150,7 +177,8 @@ namespace Prompt_manager
         };
         public static List<Parsing_Quest> NAI_quests = new()
         {
-
+            NAI_weighting,
+            WebUI_squareBracket,
         };
     }
 }

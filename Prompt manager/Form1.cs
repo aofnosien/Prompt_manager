@@ -54,12 +54,12 @@ namespace Prompt_manager
             var multiplier_str = tagData.positive.ToString();
             if (multiplier_str.Length > multiplier_str.IndexOf('.') + 3)
                 multiplier_str = multiplier_str[..(multiplier_str.IndexOf('.') + 3)];
-            item.SubItems[3].Text = multiplier_str == "0" ? "" : str;
+            item.SubItems[3].Text = multiplier_str == "0" ? "" : multiplier_str;
 
             multiplier_str = tagData.negative.ToString();
             if (multiplier_str.Length > multiplier_str.IndexOf('.') + 3)
                 multiplier_str = multiplier_str[..(multiplier_str.IndexOf('.') + 3)];
-            item.SubItems[4].Text = multiplier_str == "0" ? "" : str;
+            item.SubItems[4].Text = multiplier_str == "0" ? "" : multiplier_str;
 
 
             item.Tag = tagData;
@@ -389,6 +389,22 @@ namespace Prompt_manager
             var tagData = item.Tag as TagData;
             tagData.tagName = e.Label == null ? item.Text : e.Label;
             Apply_List_to_Prompt();
+        }
+
+        private void btn_Convert_Click(object sender, EventArgs e)
+        {
+            if (NAI_type_now == NAI_type.NAI)
+            {
+                NAI_type_now = NAI_type.WebUI;
+                label8.Text = "State : WebUI";
+                btn_Convert.Text = "WebUI ¡æ NAI";
+            }
+            else
+            {
+                NAI_type_now = NAI_type.NAI;
+                label8.Text = "State : NAI";
+                btn_Convert.Text = "NAI ¡æ WebUI";
+            }
         }
     }
 }

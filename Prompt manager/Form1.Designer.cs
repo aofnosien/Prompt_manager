@@ -520,6 +520,7 @@
             this.btn_Convert.TabIndex = 0;
             this.btn_Convert.Text = "WebUI → NAI";
             this.btn_Convert.UseVisualStyleBackColor = true;
+            this.btn_Convert.Click += new System.EventHandler(this.btn_Convert_Click);
             // 
             // btn_ToList
             // 
