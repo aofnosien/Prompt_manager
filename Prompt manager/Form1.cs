@@ -5,8 +5,8 @@ namespace Prompt_manager
     public partial class Form1 : Form
     {
         public NAI_type NAI_type_now = NAI_type.WebUI;
-        public static string enabled_text = "o";
-        public static string disabled_text = "x";
+        public static string enabled_text = "";
+        public static string disabled_text = "!";
         public List<TagData> received_tags = new();
         public Form1()
         {
@@ -45,8 +45,10 @@ namespace Prompt_manager
             item.Text = tagData.tagName;
             item.SubItems.Add(Convert.ToString(list_Tag.Items.Count + 1));
             item.SubItems.Add(enabled_text);
-            item.SubItems.Add(tagData.positive.ToString());
-            item.SubItems.Add(tagData.negative.ToString());
+            var str = tagData.positive.ToString();
+            item.SubItems.Add(str == "0" ? "" : str);
+            str = tagData.negative.ToString();
+            item.SubItems.Add(str == "0" ? "" : str);
             item.Tag = tagData;
             received_tags.Add(tagData);
             list_Tag.Items.Add(item);
@@ -118,7 +120,7 @@ namespace Prompt_manager
                     var multiplier_str = tagData.positive.ToString();
                     if (multiplier_str.Length > multiplier_str.IndexOf('.') + 3)
                         multiplier_str = multiplier_str[..(multiplier_str.IndexOf('.') + 3)];
-                    item.SubItems[3].Text = multiplier_str;
+                    item.SubItems[3].Text = (multiplier_str == "0" ? "" : multiplier_str);
                 }
             }
             Apply_List_to_Prompt();
@@ -139,7 +141,7 @@ namespace Prompt_manager
                     var multiplier_str = tagData.negative.ToString();
                     if (multiplier_str.Length > multiplier_str.IndexOf('.') + 3)
                         multiplier_str = multiplier_str[..(multiplier_str.IndexOf('.') + 3)];
-                    item.SubItems[4].Text = multiplier_str;
+                    item.SubItems[4].Text = (multiplier_str == "0" ? "" : multiplier_str);
                 }
             }
             Apply_List_to_Prompt();

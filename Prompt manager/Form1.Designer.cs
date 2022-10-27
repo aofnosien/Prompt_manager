@@ -73,8 +73,8 @@
             this.btn_SavedAdd = new System.Windows.Forms.Button();
             this.btn_SavedDown = new System.Windows.Forms.Button();
             this.btn_SavedUp = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -124,23 +124,27 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Tag";
-            this.columnHeader1.Width = 100;
+            this.columnHeader1.Width = 140;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Index";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Disabled";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Positive";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Negative";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // splitContainer1
             // 
@@ -631,15 +635,6 @@
             this.btn_SavedUp.Text = "↑";
             this.btn_SavedUp.UseVisualStyleBackColor = true;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 15);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Tags";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -648,6 +643,15 @@
             this.label9.Size = new System.Drawing.Size(214, 15);
             this.label9.TabIndex = 4;
             this.label9.Text = "← → : Move weight, Del : Remove tag";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 15);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Tags";
             // 
             // Form1
             // 
