@@ -1,0 +1,1 @@
+start "" "Prompt manager\bin\Release\net6.0-windows\Prompt manager.exe"
