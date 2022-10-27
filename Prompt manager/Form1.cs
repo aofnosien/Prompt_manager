@@ -279,7 +279,10 @@ namespace Prompt_manager
                     list_Tag.BeginUpdate();
                     var items = list_Tag.SelectedItems;
                     foreach (ListViewItem item in items)
+                    {
+                        received_tags.Remove((TagData)item.Tag);
                         item.Remove();
+                    }
                     list_Tag.EndUpdate();
                     Apply_List_to_Prompt();
                     break;
@@ -397,13 +400,13 @@ namespace Prompt_manager
             {
                 NAI_type_now = NAI_type.WebUI;
                 label8.Text = "State : WebUI";
-                btn_Convert.Text = "WebUI ¡æ NAI";
+                btn_Convert.Text = "WebUI ï¿½ï¿½ NAI";
             }
             else
             {
                 NAI_type_now = NAI_type.NAI;
                 label8.Text = "State : NAI";
-                btn_Convert.Text = "NAI ¡æ WebUI";
+                btn_Convert.Text = "NAI ï¿½ï¿½ WebUI";
             }
         }
     }
