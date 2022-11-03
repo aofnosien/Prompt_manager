@@ -1,0 +1,11 @@
+This program does not support the grammar below.
+
+(AAA : 1.3, BBB, CCC : 1.5)
+
+Very hard to understand. Such method of use must be eliminated from human society.
+
+However, the below grammar is supported.
+
+(AAA : 1.3), (BBB, CCC : 1.5)
+
+(AAA : 1.3), BBB, (CCC : 1.5)

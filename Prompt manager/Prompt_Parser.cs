@@ -8,12 +8,12 @@ namespace Prompt_manager
 {
     public class Prompt_Parser
     {
-        public NAI_type type;
+        public UI_mode type;
         public string prompt;
         public int cursor = 0;
         public int startPoint;
         public Prompt_Parser() { }
-        public Prompt_Parser(NAI_type type, string prompt, int cursor = 0)
+        public Prompt_Parser(UI_mode type, string prompt, int cursor = 0)
         {
             this.type = type;
             this.prompt = prompt;
@@ -27,7 +27,7 @@ namespace Prompt_manager
             if (string.IsNullOrEmpty(prompt))
                 return null;
 
-            var quests = (type == NAI_type.NAI) ? Parsing_Quest.NAI_quests : Parsing_Quest.WebUI_quests;
+            var quests = (type == UI_mode.NAI) ? Parsing_Quest.NAI_quests : Parsing_Quest.WebUI_quests;
 
             var token_start = this.startPoint;
 
@@ -124,7 +124,7 @@ namespace Prompt_manager
 
             return tagData;
         }
-        public static (string, string) List_to_prompt(List<TagData> tags, NAI_type type, bool append_space)
+        public static (string, string) List_to_prompt(List<TagData> tags, UI_mode type, bool append_space, bool target_is_enabled = true)
         {
             var positive = new StringBuilder();
             var negative = new StringBuilder();
@@ -133,92 +133,16 @@ namespace Prompt_manager
 
             foreach (var tagData in tags)
             {
-                if (tagData.disabled)
+                if (target_is_enabled == tagData.disabled)
                     continue;
-                if (tagData.positive != 0)
-                {
-                    positive.Append(separator);
-                    if (tagData.positive == 1)
-                    {
-                        positive.Append(tagData.tagName);
-                    }
-                    else
-                    {
-                        if (type == NAI_type.WebUI)
-                        {
-                            var multiplier = (Math.Floor(tagData.positive*100)*0.01).ToString();
-                            if (multiplier.Length > multiplier.IndexOf('.') + 3)
-                                multiplier = multiplier[..(multiplier.IndexOf('.') + 3)];
-                            positive.Append("(" + tagData.tagName + ":" + multiplier + ")");
-                        }
-                        else
-                        {
-                            string prefix = "", suffix = "";
-                            var multiplier = 1.0;
-                            if (multiplier < tagData.positive)
-                            {
-                                while (multiplier + 0.001 < tagData.positive)
-                                {
-                                    multiplier += 1.1;
-                                    prefix += "{";
-                                    suffix += "}";
-                                }
-                            }
-                            else
-                            {
-                                while (multiplier - 0.001 > tagData.positive)
-                                {
-                                    multiplier -= 1.1;
-                                    prefix += "[";
-                                    suffix += "]";
-                                }
-                            }
-                            positive.Append(prefix + tagData.tagName + suffix);
-                        }
-                    }
-                }
-                if (tagData.negative != 0)
-                {
-                    negative.Append(separator);
-                    if (tagData.negative == 1)
-                    {
-                        negative.Append(tagData.tagName);
-                    }
-                    else
-                    {
-                        if (type == NAI_type.WebUI)
-                        {
-                            var multiplier = (Math.Floor(tagData.negative * 100) * 0.01).ToString();
-                            if (multiplier.Length > multiplier.IndexOf('.') + 3)
-                                multiplier = multiplier[..(multiplier.IndexOf('.') + 3)];
-                            negative.Append("(" + tagData.tagName + ":" + multiplier + ")");
-                        }
-                        else
-                        {
-                            string prefix = "", suffix = "";
-                            var multiplier = 1.0;
-                            if (multiplier < tagData.negative)
-                            {
-                                while (multiplier + 0.001 < tagData.negative)
-                                {
-                                    multiplier += 1.1;
-                                    prefix += "{";
-                                    suffix += "}";
-                                }
-                            }
-                            else
-                            {
-                                while (multiplier - 0.001 > tagData.negative)
-                                {
-                                    multiplier -= 1.1;
-                                    prefix += "[";
-                                    suffix += "]";
-                                }
-                            }
-                            negative.Append(prefix + tagData.tagName + suffix);
-                        }
-                    }
-                }
+
+                var result = tagData.ToString(type);
+
+                if (string.IsNullOrEmpty(result.Item1) == false)
+                    positive.Append(separator + result.Item1);
+
+                if (string.IsNullOrEmpty(result.Item2) == false)
+                    negative.Append(separator + result.Item2);
             }
 
             var positive_str = positive.ToString();

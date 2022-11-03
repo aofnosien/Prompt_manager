@@ -1,0 +1,41 @@
+kaguya-sama_wa_kokurasetai_~tensai-tachi_no_renai_zunousen~,1,,1.1,
+medium long pink hair,2,,1,
+big breasts,3,,1,
+1girl,4,,1,
+solo,5,,1,
+embarrassed,6,,1,
+blunt bangs,7,,1,
+nsfw,8,,1,
+completely nude,9,,1,
+sex,10,,1,
+breast grab from back,11,,1,
+viewer from front,12,,1,
+gangbang rape,13,,1,
+tears,14,,1,
+indoor,15,,1,
+detailed penis,16,,1,
+lowres,17,,,1
+bad anatomy,18,,,1
+bad hands,19,,,1
+text,20,,,1
+error,21,,,1
+missing fingers,22,,,1
+extra digit,23,,,1
+fewer digits,24,,,1
+worst quality,25,,,1
+low quality,26,,,1
+normal quality,27,,,1
+nervous,28,,,1
+worrying,29,,,1
+realistic,30,,,1.3
+angry,31,,,1
+tsundere,32,,,1
+:>= mouth,33,,,1
+small breasts,34,,,1
+flat chest,35,,,1
+ma'am,36,,,1
+milf,37,,,1.3
+loli,38,,,1
+futanari,39,,,1.3
+hair intakes,40,,,1.3
+smile,41,,,1

@@ -16,3 +16,4 @@ C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-win
 C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.pdb
 C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.genruntimeconfig.cache
 C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt manager.csproj.AssemblyReference.cache
+C:\Users\opty2\source\repos\Prompt manager\Prompt manager\obj\Release\net6.0-windows\Prompt_manager.Form2.resources
